@@ -12,7 +12,7 @@ int main(void) {
 
   /* Loop forever */
   for (;;) {
-	  KeyJudge(); 
+	  KeyJudge();
    
   }
 }
