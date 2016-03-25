@@ -108,7 +108,7 @@ void LINFlex_TX_Interrupt(void)
 			Ts=6;}
 		else{
 			Tc=0;
-			Ts=9;
+			Ts=30;
 		}
 		break;
 	case 9: 
