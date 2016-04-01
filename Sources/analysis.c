@@ -41,7 +41,7 @@ void DataSet(void)
 		{
 			if(PixelRight[i]-PixelRight[i-b_scan]>bv[k]&&PixelRight[i-1]-PixelRight[i-b_scan-1]>bv[k])
 			{
-				bl_edge=i-b_halfscan;
+				bl_edge=i-b_halfscan;  //左边跳变沿
 				break;
 			}
 		}
@@ -49,19 +49,19 @@ void DataSet(void)
 		{
 			if(PixelRight[i]-PixelRight[i+b_scan]>bv[k]&&PixelRight[i+1]-PixelRight[i+b_scan+1]>bv[k])
 			{
-				br_edge=i+b_halfscan;
+				br_edge=i+b_halfscan;  //右边跳变沿
 				break;
 			}
 		}
 		bs[k]=(bl_edge+br_edge)/2;
 		bscnt+=bs[k];
 	}
-	b_value=bvcnt/10;
+	b_value=bvcnt/10;     //判断跳变沿的差值标准
 	//b_value=bv[0];
-	b_start=bscnt/10;
-	bl_end=b_start-44;
-	br_end=b_start+44;
-	b_T=btcnt/10;
+	b_start=bscnt/10;     //赛道中间值
+	bl_end=b_start-44;    //图像左极限
+	br_end=b_start+44;    //图像右极限
+	b_T=btcnt/10;         //黑白阈值？
 	//b_T=bt[0];
 }
 

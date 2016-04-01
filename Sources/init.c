@@ -165,12 +165,12 @@ void initAD(void)
   ADC.CTR[1].R = 0x00008606;    /*转换时间寄存器 与标准通道相关联*/
   ADC.MCR.B.NSTART=1;         /* Trigger normal conversions for ADC0 */
   
-  SIU.PCR[26].R = 0x2100;//CCDL AO  B10
-  SIU.PCR[11].R = 0x0200;//CCDL CLK A11
-  SIU.PCR[10].R = 0x0200;//CCDL SI  A10
-  SIU.PCR[24].R = 0x2100;//CCDR AO  B8
-  SIU.PCR[6].R = 0x0200;//CCDR CLK  A6
-  SIU.PCR[66].R = 0x0200;//CCDR SI  E2
+  SIU.PCR[26].R = 0x2100;//CCDR AO  B10
+  SIU.PCR[11].R = 0x0200;//CCDR CLK A11
+  SIU.PCR[10].R = 0x0200;//CCDR SI  A10
+  SIU.PCR[24].R = 0x2100;//CCDL AO  B8
+  SIU.PCR[6].R = 0x0200;//CCDL CLK  A6
+  SIU.PCR[66].R = 0x0200;//CCDL SI  E2
 }
 
 //*****************************************************************************************************************
@@ -203,7 +203,7 @@ void initLINFlex_0_UART(void)
 	
 	SIU.PCR[18].R = 0x0400;    /* MPC56xxB: Configure port B2 as LIN0TX */
     SIU.PCR[19].R = 0x0103;    /* MPC56xxB: Configure port B3 as LIN0RX */
-  	//INTC_InstallINTCInterruptHandler(LINFlex_TX_Interrupt,80,2); 
+  	INTC_InstallINTCInterruptHandler(LINFlex_TX_Interrupt,80,2); 
 }
 
 /*********************测试IO初始化***********************/
