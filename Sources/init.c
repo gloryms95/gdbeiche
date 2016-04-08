@@ -16,9 +16,9 @@ void initALL(void)
 //	initEMIOS_0Image();
 	initLINFlex_0_UART();
 	initAD();
-//	initOLED();
 //	initKeys_Switchs_Infrared();
 	initTestIO();
+	OLED_Init();
 }
 
 /*********************************************************************************************/
@@ -222,11 +222,11 @@ void initTestIO(void)
 //	SIU.PCR[60].R = 0x0200;//COUNTER1 D12
 //	SIU.PCR[6].R = 0x0200; //COUNTER2 A6
 //	SIU.PCR[8].R = 0x0200; //COUNTER1 A8
-//	SIU.PCR[72].R = 0x0200;//OLED     E8
-//	SIU.PCR[74].R = 0x0200;//OLED     E10
-//	SIU.PCR[75].R = 0x0200;//OLED     E11
-//	SIU.PCR[42].R = 0x0200;//OLED     C10
-//	SIU.PCR[17].R = 0x0200;//OLED     B1
+	SIU.PCR[72].R = 0x0200;//OLED     E8
+	SIU.PCR[74].R = 0x0200;//OLED     E10
+	SIU.PCR[75].R = 0x0200;//OLED     E11
+	SIU.PCR[42].R = 0x0200;//OLED     C10
+	SIU.PCR[17].R = 0x0200;//OLED     B1
 	SIU.PCR[73].R = 0x0200; //BEE      E9
 //	SIU.PCR[9].R = 0x0200; //SUPER1   A9
 //	SIU.PCR[5].R = 0x0200; //SUPER1   A5

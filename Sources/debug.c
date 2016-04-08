@@ -108,7 +108,7 @@ void LINFlex_TX_Interrupt(void)
 			Ts=6;}
 		else{
 			Tc=0;
-			Ts=30;
+			Ts=9;
 		}
 		break;
 	case 9: 
@@ -130,7 +130,7 @@ void LINFlex_TX_Interrupt(void)
 		break;
 	case 13:
 		LINFlex_TX(SendInt4(CurrentSteer));
-		Ts=14;
+		Ts=30;
 		break;
 	case 14: 
 		LINFlex_TX(speed);

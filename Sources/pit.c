@@ -23,7 +23,7 @@ void PitISR(void)//1ms一个控制周期
 	if(pitcount0==2)
 	{
 		pitcount2++;
-		if(pitcount2>=1)                          //5ms一次,需2ms,共12ms一次
+		if(pitcount2>=2)                          //5ms一次,需2ms,共12ms一次
 		{
 			//time1=TIME;
 			pitcount2=0;
@@ -56,7 +56,9 @@ void PitISR(void)//1ms一个控制周期
 		if(pitcount5>=100)                         //1s一次
 		{
 			pitcount5=0;
-			
+			OLED_SetPointer(2,20);
+			OLED_Str("ts: ");
+			OLED_Num(CurrentSteer);
 		}
 	}
 	PIT.CH[1].TFLG.B.TIF = 1;//write 1 to clear PIT1 清除标志位
