@@ -16,7 +16,7 @@ void initALL(void)
 //	initEMIOS_0Image();
 	initLINFlex_0_UART();
 	initAD();
-//	initOLED();
+	initOLED();
 //	initKeys_Switchs_Infrared();
 	initTestIO();
 }
