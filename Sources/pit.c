@@ -23,11 +23,11 @@ void PitISR(void)//1ms一个控制周期
 	if(pitcount0==2)
 	{
 		pitcount2++;
-		if(pitcount2>=1)                          //5ms一次,需2ms,共12ms一次
+		if(pitcount2>=2)                          //5ms一次,需2ms,共12ms一次
 		{
 			//time1=TIME;
 			pitcount2=0;
-			ImageCapture(PixelLeft,PixelRight);
+		    ImageCapture(PixelLeft,PixelRight);
 //			PixelScan();                          //扫描跳变沿
 //			ErrorCalculate();                     //计算偏差值
 //			Steer_PDSet();

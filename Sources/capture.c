@@ -33,8 +33,8 @@ void ImageCapture(int L[],int R[])
   }
   
   while (ADC.CDR[34].B.VALID != 1) {}; /* 等待最后一次扫描完成*/
-  Result0= ADC.CDR[32].B.CDATA; /* 读取ANS0的转换结果数据*/
-  Result1= ADC.CDR[34].B.CDATA; /* 读取ANS2的转换结果数据*/
+  Result1= ADC.CDR[32].B.CDATA; /* 读取ANS0的转换结果数据*/
+  Result0= ADC.CDR[34].B.CDATA; /* 读取ANS2的转换结果数据*/
 
   L[0]=Result0;
   R[0]=Result1;
@@ -52,8 +52,8 @@ void ImageCapture(int L[],int R[])
         
      //Sampling Pixel 2~128
      while (ADC.CDR[34].B.VALID != 1) {}; /* 等待最后一次扫描完成*/
-     Result0= ADC.CDR[32].B.CDATA; /* 读取ANS0的转换结果数据*/
-     Result1= ADC.CDR[34].B.CDATA; /* 读取ANS2的转换结果数据*/
+     Result1= ADC.CDR[32].B.CDATA; /* 读取ANS0的转换结果数据*/
+     Result0= ADC.CDR[34].B.CDATA; /* 读取ANS2的转换结果数据*/
      L[i+1]=Result0;
      R[i+1]=Result1;
      CCDL_CLK = 0;    // CLK = 0 
